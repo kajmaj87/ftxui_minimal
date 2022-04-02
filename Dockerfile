@@ -21,6 +21,6 @@ RUN mkdir build && \
     cmake .. && \
     cmake --build .
 
-WORKDIR /example/site
+WORKDIR /example/docs
 
 CMD ["python3", "run_webassembly.py"]
