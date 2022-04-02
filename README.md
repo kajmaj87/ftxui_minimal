@@ -5,13 +5,32 @@ This is based on https://github.com/ArthurSonzogni/FTXUI library
 
 This example was prepared to showcase an error with running the minimal example in browser.
 
-## Preparing image
+## Building and running manually
+
+You would have to install emscripten as described in https://emscripten.org/docs/getting_started/downloads.html
+
+Now run the following:
+
+```
+$ mkdir build_webasm
+$ cd build_webasm
+$ cmake .. -DCMAKE_TOOLCHAIN_FILE=/path/to/yours/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DPLATFORM=Web -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 
+$ cmake --build .
+$ cd ../docs
+$ python3 run_webassembly.py
+```
+
+Page under http://localhost:8888 should automatically open.
+
+## Building and running with Docker
+
+### Preparing image
 
 Run:
 
 ``$ docker build -t ftxui .``
 
-## Running the example in browser
+### Running the example in browser
 
 Run:
 
@@ -19,7 +38,7 @@ Run:
 
 After going to browser under http://localhost:8888 a slider should be visible.
 
-## Running the example in console
+### Running the example in console
 
 Run:
 
