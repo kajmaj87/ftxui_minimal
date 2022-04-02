@@ -31,14 +31,14 @@ target_link_libraries(${PROJECT_NAME}
 if (EMSCRIPTEN) 
     add_custom_command(TARGET ${PROJECT_NAME} 
                     POST_BUILD
-                    COMMAND ${CMAKE_COMMAND} -E make_directory ../site/generated)
+                    COMMAND ${CMAKE_COMMAND} -E make_directory ../docs/generated)
     add_custom_command(TARGET ${PROJECT_NAME} 
                     POST_BUILD
-                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.js ../site/generated/ftxui_minimal.js)
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.js ../docs/generated/ftxui_minimal.js)
     add_custom_command(TARGET ${PROJECT_NAME} 
                     POST_BUILD
-                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.wasm ../site/generated/ftxui_minimal.wasm)
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.wasm ../docs/generated/ftxui_minimal.wasm)
     add_custom_command(TARGET ${PROJECT_NAME} 
                     POST_BUILD
-                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.worker.js ../site/generated/ftxui_minimal.worker.js)
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.worker.js ../docs/generated/ftxui_minimal.worker.js)
 endif() 
