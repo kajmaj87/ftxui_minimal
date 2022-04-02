@@ -17,7 +17,7 @@ Run:
 
 ``$ docker run -p 8888:8888 ftxui``
 
-After going to browser under localhost:8888 a slider should be visible but instead there is a bug in webassembly:
+After going to browser under http://localhost:8888 a slider should be visible but instead there is a bug in webassembly:
 
 <img src=https://i.imgur.com/VW1N5tG.png />
 
