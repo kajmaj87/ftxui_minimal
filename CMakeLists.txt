@@ -27,3 +27,18 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE ftxui::screen
     PRIVATE ftxui::dom
     PRIVATE ftxui::component)
+
+if (EMSCRIPTEN) 
+    add_custom_command(TARGET ${PROJECT_NAME} 
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E make_directory ../site/generated)
+    add_custom_command(TARGET ${PROJECT_NAME} 
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.js ../site/generated/ftxui_minimal.js)
+    add_custom_command(TARGET ${PROJECT_NAME} 
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.wasm ../site/generated/ftxui_minimal.wasm)
+    add_custom_command(TARGET ${PROJECT_NAME} 
+                    POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy ftxui_minimal.worker.js ../site/generated/ftxui_minimal.worker.js)
+endif() 

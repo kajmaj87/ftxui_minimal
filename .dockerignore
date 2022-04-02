@@ -1,4 +1,5 @@
 build
 build_webasm
+site/generated
 Dockerfile
 .dockerignore
