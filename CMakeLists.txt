@@ -7,6 +7,12 @@ project(ftxui_minimal
     LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+if (EMSCRIPTEN) 
+    #string(APPEND CMAKE_CXX_FLAGS " -s ASSERTIONS=1") 
+    string(APPEND CMAKE_CXX_FLAGS " -s USE_PTHREADS") 
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -s ASYNCIFY") 
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -s PROXY_TO_PTHREAD") 
+endif() 
 
 # add executable
 add_executable(${PROJECT_NAME} main.cpp)
