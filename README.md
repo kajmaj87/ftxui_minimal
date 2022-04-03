@@ -50,4 +50,6 @@ You should see something similar to this in console:
 
 ## Automatic deployment
 
-This code is automatically build and submitted to https://kajmaj87.github.io/ftxui_minimal/
+This code is automatically build and submitted to https://ftxui-minimal.pages.dev/.
+
+This is done using the configured main.yml workflow, which builds wasm binaries and then pushes them to gh-pages branch. This branch is then picked up by Cloudflare and deployed on mentioned url. To make all of this work \_headers file was needed.
